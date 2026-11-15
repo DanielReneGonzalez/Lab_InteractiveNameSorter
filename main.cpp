@@ -1,18 +1,58 @@
-#include <iostream>
+/*
+ * Name: Daniel Gonzalez
+ * Date: 11-13-2026
+ * Purpose:
+ *
+ *
+ */
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <cctype>
+using namespace std;
+
+// Function Prototypes
+bool isWhitespaceOnly(const string& str);
+void displayNames(const vector<string>& names);
 
 int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
+    vector<std::string> nameList;
+    string input;
 
-    constexpr auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
+    cout << "=== Alphabetical Name List Builder ===" << endl;
+    cout << "Enter names one at a time. Press Enter on a blank line to finish.\n" << endl;
 
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
+    while (true) {
+        cout << "Enter name: ";
+
+        // getline reads the entire line including spaces,
+        // allowing to detect when the user just presses Enter.
+        getline(cin, input);
+
+        // Stop the loop if the user enters a completely blank line
+        if (input.empty()) {
+            cout << "\nBlank line detected. Exiting program..." << endl;
+            break;
+        }
+
+        // Validate that the name is not just spaces or tabs
+        if (isWhitespaceOnly(input)) {
+            cout << "Invalid input: Name cannot be only spaces. Please try again.\n" << endl;
+            continue; // Skips the rest of the loop and prompts again
+        }
+
+        // Add the vaild name directly to the vector
+        nameList.push_back(input);
+
+        // Sort the vector alphabetically using sort()
+        sort(nameList.begin(), nameList.end());
+
+        // Displays the sorted list after each valid entry
+        displayNames(nameList);
     }
 
+    cout << "Final count: " << nameList.size() << " name(s) recorded." << endl;
     return 0;
-    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
 }

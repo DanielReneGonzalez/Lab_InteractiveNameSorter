@@ -1,9 +1,8 @@
 /*
  * Name: Daniel Gonzalez
  * Date: 11-13-2026
- * Purpose:
- *
- *
+ * Purpose: Build a list of names in a vector. Automatically sort names alphabetically
+ * and displays the updated list. The program will accept names until the user presses Enter
  */
 
 #include <iostream>
@@ -58,7 +57,6 @@ int main() {
 }
 
 // Checks if a string is empty
-
 bool isWhitespaceOnly(const string& str) {
     for (char ch : str) {
         if (!isspace(static_cast<unsigned char>(ch))) {
@@ -69,7 +67,6 @@ bool isWhitespaceOnly(const string& str) {
 }
 
 // Prints all names currently stored in the vector.
-
 void displayNames(const vector<string>& names) {
     cout << "\n--- Current Sorted List ---" << endl;
     for (size_t i = 0; i < names.size(); ++i) {

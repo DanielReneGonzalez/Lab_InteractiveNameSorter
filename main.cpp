@@ -56,3 +56,12 @@ int main() {
     cout << "Final count: " << nameList.size() << " name(s) recorded." << endl;
     return 0;
 }
+
+bool isWhitespaceOnly(const string& str) {
+    for (char ch : str) {
+        if (!isspace(static_cast<unsigned char>(ch))) {
+            return false;
+        }
+    }
+    return true;
+}

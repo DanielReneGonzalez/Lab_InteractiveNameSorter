@@ -65,3 +65,11 @@ bool isWhitespaceOnly(const string& str) {
     }
     return true;
 }
+
+void displayNames(const vector<string>& names) {
+    cout << "\n--- Current Sorted List ---" << endl;
+    for (size_t i = 0; i < names.size(); ++i) {
+        cout << (i + 1) << ". " << names[i] << endl;
+    }
+    cout << "-----------------------------\n" << endl;
+}

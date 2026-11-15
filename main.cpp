@@ -43,7 +43,7 @@ int main() {
             continue; // Skips the rest of the loop and prompts again
         }
 
-        // Add the vaild name directly to the vector
+        // Add the valid name directly to the vector
         nameList.push_back(input);
 
         // Sort the vector alphabetically using sort()
@@ -57,6 +57,8 @@ int main() {
     return 0;
 }
 
+// Checks if a string is empty
+
 bool isWhitespaceOnly(const string& str) {
     for (char ch : str) {
         if (!isspace(static_cast<unsigned char>(ch))) {
@@ -66,9 +68,13 @@ bool isWhitespaceOnly(const string& str) {
     return true;
 }
 
+// Prints all names currently stored in the vector.
+
 void displayNames(const vector<string>& names) {
     cout << "\n--- Current Sorted List ---" << endl;
     for (size_t i = 0; i < names.size(); ++i) {
+
+        // (i + 1) to make the printed list start at 1
         cout << (i + 1) << ". " << names[i] << endl;
     }
     cout << "-----------------------------\n" << endl;

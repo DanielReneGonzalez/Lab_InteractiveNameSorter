@@ -17,7 +17,7 @@ bool isWhitespaceOnly(const string& str);
 void displayNames(const vector<string>& names);
 
 int main() {
-    vector<std::string> nameList;
+    vector<string> nameList;
     string input;
 
     cout << "=== Alphabetical Name List Builder ===" << endl;

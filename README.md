@@ -4,7 +4,7 @@ A command-line C++ application that allows users to interactively build, validat
 
 ## Overview
 
-This program continuously prompts the user to enter names one at a time, storing them dynamically in a `std::vector<std::string>`. After each valid entry, the list is automatically sorted alphabetically using `std::sort()` and displayed to the console. Entering a blank line cleanly terminates the program and displays the final count of recorded names.
+This program continuously prompts the user to enter names one at a time, storing them dynamically in a `vector<string>`. After each valid entry, the list is automatically sorted alphabetically using `sort()` and displayed to the console. Entering a blank line cleanly terminates the program and displays the final count of recorded names.
 
 ## Features
 
@@ -14,15 +14,3 @@ This program continuously prompts the user to enter names one at a time, storing
 - **Real-Time Alphabetical Sorting:** Automatically sorts the list after every valid addition via `sort()` from `<algorithm>`.
 - **Modular Structure:** Separates input validation (`isWhitespaceOnly`) and console output (`displayNames`) into dedicated helper functions.
 
-## Prerequisites
-
-- A C++ compiler supporting C++11 or newer (`g++`, `clang++`, or MSVC)
-
-## Getting Started
-
-### Compile
-
-Using `g++` from your terminal:
-
-```bash
-g++ -std=c++17 -Wall -Wextra main.cpp -o name_list
